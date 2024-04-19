@@ -1,0 +1,33 @@
+
+<html>
+<head>
+  {{>header}}
+  <style>
+    .button-container {
+      text-align: right; 
+      white-space: nowrap; 
+    }
+    .btn {
+      margin-left: 10px; 
+      display: inline-block; /* Ensures buttons are in line */
+    }
+  </style>
+</head>
+<body>
+<h1>Welcome To The Scottish Pantry Network !</h1>
+<div class="button-container">
+  {{#user}}
+    <a href="/logout" class="btn btn-primary">Sign Out</a>
+    <a href="/login" class="btn btn-success">Post New Food</a>
+  {{/user}}
+  {{^user}}
+    <a href="/login" class="btn btn-primary">Sign In</a>
+    <a href="/register" class="btn btn-primary">Register</a>
+  {{/user}}
+  <a href="/about.html" class="btn btn-secondary">About Us</a>
+  <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+  <a href="/foods" class="btn btn-success">View Available Food Items</a>
+</div>
+<p>We work with local suppliers to an provide an effective alternative to help reduce food waste, which helps to achieve our global climate commitments. </p>
+</body>
+</html>

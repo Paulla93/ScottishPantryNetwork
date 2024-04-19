@@ -1,0 +1,21 @@
+<html>
+<head>
+  {{> header}}
+  <title>Post New Food Item</title>
+</head>
+<body class="container">
+  <h1>Post New Food Item</h1>
+  <form method="post" action="/food/add">
+    <div class="form-group">
+      <label for="name">Food Item Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="dateExpire">Expiration Date:</label>
+      <input type="date" class="form-control" id="dateExpire" name="dateExpire" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+  </form>
+  <a href="/foods" class="btn btn-secondary">Back to Food Items</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+  {{> header}}
+</head>
+<body>
+  <h1>Available Food Items</h1>
+  <ul>
+    {{#items}}
+      <li>{{name}} - Expires on: {{dateExpire}}
+          <form method="post" action="/food/select/{{_id}}">
+    <button type="submit">Select</button>
+</form>
+      </li>
+    {{/items}}
+    {{^items}}
+      <li>No items available.</li>
+    {{/items}}
+  </ul>
+  {{#user}}
+    <div>
+      <a href="/food/add" class="btn btn-primary">Post New Food</a>
+      <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+  {{/user}}
+  {{^user}}
+    <a href="/login" class="btn btn-primary">Log In to Post New Food</a>
+  {{/user}}
+</body>
+</html>

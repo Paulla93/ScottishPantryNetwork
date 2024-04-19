@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>Welcome to the Admin Dashboard, {{user.username}}!</h1>
+
+    <h2>Manage Users</h2>
+<ul>
+    {{#users}}
+    <li>{{username}} - <form action="/admin/deleteuser/{{_id}}" method="post" onsubmit="return confirm('Are you sure?');">
+        <button type="submit">Delete</button>
+    </form></li>
+    {{/users}}
+</ul>
+
+    <h2>Manage Food Items</h2>
+    <ul>
+    {{#foodItems}}
+    <li>{{name}} - Expires on {{dateExpire}}
+        <form action="/admin/deletefood/{{_id}}" method="post" style="display: inline;">
+            <button type="submit" onclick="return confirm('Are you sure?');">Delete</button>
+        </form>
+    </li>
+    {{/foodItems}}
+    
+    <div>
+  <a href="/" class="btn btn-secondary">Back to Home</a>
+  <a href="/logout" class="btn btn-primary">Sign Out</a>
+</div>
+
+
+</ul>
+
+</body>
+</html>
